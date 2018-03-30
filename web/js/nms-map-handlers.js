@@ -180,7 +180,8 @@ function uplinkInfo(sw)
 		    }
 		}
 	}
-	if (testTree(nmsData,['switchstate','switches',sw,'clients','live'])) {
+	if (testTree(nmsData,['switchstate','switches',sw,'clients','live'])
+		&& testTree(nmsData,['switchstate','switches',sw,'clients','total'])) {
 		var tu = parseInt(nmsData.switchstate.switches[sw].clients.live);
 		var tt = parseInt(nmsData.switchstate.switches[sw].clients.total);
 		ret.data[1] = {};
